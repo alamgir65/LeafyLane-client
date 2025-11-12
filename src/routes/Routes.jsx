@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import ErrorPage from "../pages/Error/ErrorPage";
+import useAxios from "../hooks/useAxios";
+
 
 const router = createBrowserRouter([
     {
