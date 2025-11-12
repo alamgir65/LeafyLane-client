@@ -7,11 +7,11 @@ const Navbar = () => {
     const {user,logoutUser} = use(AuthContext);
     const links = <>
         <li><NavLink className={'nav-li'} to={'/'}>Home</NavLink> </li>
-        <li><NavLink className={'nav-li'} to={'/'}>All Tree's</NavLink> </li>
+        <li><NavLink className={'nav-li'} to={'/all-properties'}>All Properties</NavLink> </li>
         {
             user && <>
-                <li><NavLink className={'nav-li'} to={'/'}>Add Tree</NavLink> </li>
-                <li><NavLink className={'nav-li'} to={'/auth/profile'}>My Tree's</NavLink> </li>
+                <li><NavLink className={'nav-li'} to={'/add-property'}>Add Property</NavLink> </li>
+                <li><NavLink className={'nav-li'} to={'/my-properties'}>My Properties</NavLink> </li>
             </>
         }
     </>

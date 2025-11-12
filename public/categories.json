@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Apartment",
+    "description": "Multi-unit residential buildings with individual flats or suites for urban living."
+  },
+  {
+    "id": 2,
+    "name": "House",
+    "description": "Independent residential homes suitable for families, offering privacy and space."
+  },
+  {
+    "id": 3,
+    "name": "Commercial",
+    "description": "Properties designed for business use, including offices, shops, and retail spaces."
+  },
+  {
+    "id": 4,
+    "name": "Land",
+    "description": "Open plots or areas available for residential or commercial development."
+  },
+  {
+    "id": 5,
+    "name": "Farmhouse",
+    "description": "Spacious rural properties designed for leisure, agriculture, or weekend retreats."
+  }
+]

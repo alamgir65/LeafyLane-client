@@ -7,7 +7,6 @@ import { CiLocationOn } from "react-icons/ci";
 
 
 const Property = ({ property}) => {
-    console.log('Property', property);
     const { title, image, category, description, location ,price_min} = property;
     return (
         <>
