@@ -1,0 +1,8 @@
+.swiper-button-prev , .swiper-button-next {
+    color: #2F855A; /* Tailwind's green-600 */
+    width: 15px;
+}
+
+.swiper-pagination-bullet {
+    background-color: #0e7943; /* Tailwind's green-600 */
+}

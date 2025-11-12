@@ -1,0 +1,20 @@
+[
+  {
+    "image": "https://i.ibb.co.com/pvfQr63j/bg1.jpg",
+    "title": "Welcome to ToysTime!",
+    "subtitle": "Discover a world full of smiles, colors, and creativity.",
+    "buttonText": "Shop Now"
+  },
+  {
+    "image": "https://i.ibb.co.com/gbLnhmTZ/bg2.jpg",
+    "title": "Adventure Starts Here!",
+    "subtitle": "From superheroes to soft toys — every story begins with play.",
+    "buttonText": "Explore Toys"
+  },
+  {
+    "image": "https://i.ibb.co.com/qFVjbXvq/bg3.jpg",
+    "title": "Learning Made Fun!",
+    "subtitle": "Educational toys that make growing smarter and happier.",
+    "buttonText": "Start Learning"
+  }
+]

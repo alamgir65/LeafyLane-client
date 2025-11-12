@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../context/AuthContext';
+import { use, useState } from 'react';
 
 const Navbar = () => {
-    const user = false;
+    const [username, setUsername] = useState(true);
+    const {user,logoutUser} = use(AuthContext);
     const links = <>
         <li><NavLink className={'nav-li'} to={'/'}>Home</NavLink> </li>
         <li><NavLink className={'nav-li'} to={'/'}>All Tree's</NavLink> </li>
@@ -12,6 +15,16 @@ const Navbar = () => {
             </>
         }
     </>
+
+    const logoutHandler = () => {
+        logoutUser()
+            .then(() => {
+
+            })
+            .catch(() => {
+
+            })
+    }
 
     return (
         <div className="navbar shadow-sm px-3">
@@ -36,7 +49,7 @@ const Navbar = () => {
             <div className="navbar-end space-x-3 relative">
                 {
                     user ? <>
-                        {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div
                                 onMouseEnter={() => setUsername(false)}
                                 onMouseLeave={() => setUsername(true)}
@@ -49,8 +62,8 @@ const Navbar = () => {
                             <p className={`absolute right-12 top-7 p-2 ${username ? 'hidden' : 'visible'} rounded-md bg-primary text-white`}>
                                 {user?.displayName}
                             </p>
-                        </div> */}
-                        <a className="btn btn-outline btn-primary">LogOut</a>
+                        </div>
+                        <a onClick={logoutHandler} className="btn btn-outline btn-primary">LogOut</a>
                     </>
 
                         : <div className='space-x-3'>
