@@ -5,6 +5,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import ErrorPage from "../pages/Error/ErrorPage";
 import useAxios from "../hooks/useAxios";
+import PropertyDetails from "../components/Properties/PropertyDetails";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
             {
                 path: 'auth/login',
                 Component: Login
+            },
+            {
+                path: 'property-details/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/properties/${params.id}`),
+                Component: PropertyDetails
             }
         ]
     },
