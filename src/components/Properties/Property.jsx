@@ -83,7 +83,7 @@ const Property = ({ property,deleteHandler, flag = false }) => {
                     <p>{description.split(' ').slice(0, 15).join(' ')}{description.split(' ').length > 20 ? '...' : ''}</p>
                     <div className="card-actions justify-between items-center mt-4">
                         <div className="badge badge-outline">{category}</div>
-                        <h1 className='text-xl font-bold'>${price_min}</h1>
+                        <h1 className='text-xl font-bold'>${price}</h1>
                     </div>
                     {
                         flag && <>

@@ -28,10 +28,10 @@ const Rating = ({ item }) => {
     };
 
     return (
-        <div className="bg-primary p-7 text-white rounded-lg">
+        <div className="bg-primary p-7 h-full text-white rounded-lg">
             <div className="flex gap-3 mb-4 items-center">
                 <img
-                    src={property_image || demo}
+                    src={property_image ? property_image : demo}
                     className="w-40 h-18 rounded-xl object-cover"
                     alt={property_name}
                 />
