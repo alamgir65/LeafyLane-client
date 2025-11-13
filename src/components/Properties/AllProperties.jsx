@@ -8,6 +8,7 @@ const AllProperties = () => {
     const [loading, setLoading] = useState(true);
     const axiosInstance = useAxios();
     const [searchValue, setSearchValue] = useState('');
+    const [sortBy, setSortBy] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,7 +30,14 @@ const AllProperties = () => {
             .then(res => {
                 setProperties(res.data);
             })
-    },[searchValue,axiosInstance])
+    },[searchValue,axiosInstance]);
+
+    useEffect(()=>{
+        axiosInstance.get(`/properties?sort=${sortBy}`)
+            .then(res => {
+                setProperties(res.data);
+            })
+    },[sortBy,axiosInstance])
 
     if (loading) return <p className="text-center">Loading...</p>;
 
@@ -43,8 +51,8 @@ const AllProperties = () => {
                     <div className="dropdown dropdown-start">
                         <div tabIndex={0} role="button" className="btn m-1">Sort By ⬇️</div>
                         <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                            <li><a>By Price</a></li>
-                            <li><a>By Posted</a></li>
+                            <li><a onClick={()=>setSortBy('price')}>By Price</a></li>
+                            <li><a onClick={()=>setSortBy('date')}>By Posted Date</a></li>
                         </ul>
                     </div>
                     <label className="input">
