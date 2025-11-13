@@ -1,0 +1,7 @@
+/* .menu a{
+    color: #422ad5;
+    background: none;
+} */
+.menu a.active{
+    text-decoration: underline;
+}

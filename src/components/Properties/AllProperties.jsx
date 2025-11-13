@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Property from './Property';
 import useAxios from '../../hooks/useAxios';
+import Loading from '../Loading';
 
 
 const AllProperties = () => {
@@ -16,6 +17,7 @@ const AllProperties = () => {
                 const res = await axiosInstance.get('/properties');
                 const data = res.data;
                 setProperties(data);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching properties:', error);
             } finally {
@@ -29,6 +31,7 @@ const AllProperties = () => {
         axiosInstance.get(`/properties?title=${searchValue}`)
             .then(res => {
                 setProperties(res.data);
+                setLoading(false);
             })
     },[searchValue,axiosInstance]);
 
@@ -36,10 +39,11 @@ const AllProperties = () => {
         axiosInstance.get(`/properties?sort=${sortBy}`)
             .then(res => {
                 setProperties(res.data);
+                setLoading(false);
             })
     },[sortBy,axiosInstance])
 
-    if (loading) return <p className="text-center">Loading...</p>;
+    if (loading) return <Loading></Loading>
 
     return (
         <div>
@@ -79,7 +83,7 @@ const AllProperties = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-6 mt-5 py-8 mx-auto px-5 rounded-lg'>
                 {
                     properties.map(item => (<Property key={item._id} property={item} />
-                    ))}
+                ))}
             </div>
         </div>
     );

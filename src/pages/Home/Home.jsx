@@ -3,6 +3,7 @@ import SwiperSlider from './SwiperSlider';
 import LatestProperties from '../../components/Properties/LatestProperties';
 import WhyChoose from './WhyChoose';
 import CustomerSaying from './CustomerSaying';
+import MapSection from '../../components/Properties/MapSection';
 
 const Home = () => {
     return (
@@ -18,6 +19,9 @@ const Home = () => {
             </section>
             <section>
                 <CustomerSaying></CustomerSaying>
+            </section>
+            <section>
+                <MapSection></MapSection>
             </section>
         </div>
     );

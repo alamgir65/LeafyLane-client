@@ -1,20 +1,20 @@
 [
   {
     "image": "https://i.ibb.co.com/M5Zz4MNC/bgg1.jpg",
-    "title": "Welcome to ToysTime!",
-    "subtitle": "Discover a world full of smiles, colors, and creativity.",
-    "buttonText": "Shop Now"
+    "title": "Find Your Dream Home",
+    "subtitle": "Explore premium properties in your favorite locations with HomeNest.",
+    "buttonText": "View Listings"
   },
   {
     "image": "https://i.ibb.co.com/MkV1fvrR/bgg2.jpg",
-    "title": "Adventure Starts Here!",
-    "subtitle": "From superheroes to soft toys — every story begins with play.",
-    "buttonText": "Explore Toys"
+    "title": "Modern Living Spaces",
+    "subtitle": "Discover apartments designed for comfort, style, and convenience.",
+    "buttonText": "Explore Homes"
   },
   {
     "image": "https://i.ibb.co.com/S7GyqWzY/bg3.jpg",
-    "title": "Learning Made Fun!",
-    "subtitle": "Educational toys that make growing smarter and happier.",
-    "buttonText": "Start Learning"
+    "title": "Invest in Your Future",
+    "subtitle": "Find the perfect property that grows with your dreams and goals.",
+    "buttonText": "Get Started"
   }
 ]
