@@ -11,13 +11,9 @@ const LatestProperties = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axiosInstance.get('/properties');
-                // console.log('data inside useEffect ', res);
+                const res = await axiosInstance.get('/latest-properties');
                 const data = res.data;
-                const latestData = data
-                    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-                    .slice(0, 6);
-                setLatestProperties(latestData);
+                setLatestProperties(data);
             } catch (error) {
                 console.error('Error fetching properties:', error);
             } finally {
@@ -32,7 +28,7 @@ const LatestProperties = () => {
     return (
         <div>
             <h1 className='text-4xl font-semibold text-center text-primary mb-5'>
-                Latest Plant's : {latestProperties.length}
+                Latest Properties
             </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-6 mt-5 py-8 mx-auto px-5 rounded-lg'>
                 {
