@@ -2,6 +2,7 @@ import React from 'react';
 import SwiperSlider from './SwiperSlider';
 import LatestProperties from '../../components/Properties/LatestProperties';
 import WhyChoose from './WhyChoose';
+import CustomerSaying from './CustomerSaying';
 
 const Home = () => {
     return (
@@ -14,6 +15,9 @@ const Home = () => {
             </section>
             <section>
                 <WhyChoose></WhyChoose>
+            </section>
+            <section>
+                <CustomerSaying></CustomerSaying>
             </section>
         </div>
     );

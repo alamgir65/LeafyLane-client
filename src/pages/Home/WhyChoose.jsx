@@ -15,18 +15,18 @@ const WhyChoose = () => {
                 <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
                     <div>
                         <img className='rounded-5xl' src={choto1} alt="" />
-                        <h2 className='text-2xl font-bold text-primary mb-5'>Build everything you want</h2>
-                        <p className='text-primary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <h2 className='text-2xl font-bold text-primary mb-5'>Quality You Can Trust</h2>
+                        <p className='text-primary'>We carefully curate every toy in our collection, ensuring the highest safety standards and durability. Your child's happiness and well-being are our top priorities.</p>
                     </div>
                     <div>
                         <img className='rounded-5xl' src={choto2} alt="" />
-                        <h2 className='text-2xl font-bold text-primary mb-5'>Reduce development cost</h2>
-                        <p className='text-primary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <h2 className='text-2xl font-bold text-primary mb-5'>Affordable Prices</h2>
+                        <p className='text-primary'>Get the best value for your money with our competitive pricing. We believe every child deserves access to quality toys without breaking the bank.</p>
                     </div>
                     <div>
                         <img className='rounded-5xl' src={choto3} alt="" />
-                        <h2 className='text-2xl font-bold text-primary mb-5'>Receive world class support</h2>
-                        <p className='text-primary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <h2 className='text-2xl font-bold text-primary mb-5'>Fast & Reliable Delivery</h2>
+                        <p className='text-primary'>Enjoy quick shipping and hassle-free returns. Our dedicated customer support team is always ready to assist you with any questions or concerns.</p>
                     </div>
                 </div>
             </div>

@@ -5,8 +5,10 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import ErrorPage from "../pages/Error/ErrorPage";
 import useAxios from "../hooks/useAxios";
-import PropertyDetails from "../components/Properties/PropertyDetails";
 import CreateProperty from "../components/Properties/CreateProperty";
+import AllProperties from "../components/Properties/AllProperties";
+import PrivateRouter from "../context/PrivateRouter";
+import PropertyDetails from "../components/Properties/PropertyDetails";
 
 
 const router = createBrowserRouter([
@@ -29,11 +31,15 @@ const router = createBrowserRouter([
             {
                 path: 'property-details/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/properties/${params.id}`),
-                Component: PropertyDetails
+                element: <PrivateRouter><PropertyDetails></PropertyDetails> </PrivateRouter>
             },
             {
                 path: 'add-property',
-                element: <CreateProperty></CreateProperty>
+                element: <PrivateRouter><CreateProperty></CreateProperty></PrivateRouter>
+            },
+            {
+                path: 'all-properties',
+                element: <PrivateRouter><AllProperties></AllProperties></PrivateRouter>
             }
         ]
     },
