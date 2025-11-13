@@ -8,25 +8,26 @@ const Footer = () => {
     return (
         <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
             <aside>
-                <h1 className='text-5xl font-bold mb-3'>Leafy<span className='text-primary'>Line</span></h1>
+                <h1 className='text-5xl font-bold mb-3'>Home<span className='text-primary'>Nest</span></h1>
                 <p>
-                    ToyTime Industries Ltd.
+                    HomeNext Industries Ltd.
                     <br />
-                    Providing reliable toy since 2024.
+                    Providing reliable real-estate services since 2024.
                 </p>
             </aside>
             <nav>
                 <h6 className="footer-title">Services</h6>
-                <a >Educational Toy</a>
-                <a >Arts & Creafts</a>
-                <a>Dolls & Plush</a>
-                <a >Vechicles & RC</a>
+                <a>Property Sales</a>
+                <a>Property Rentals</a>
+                <a>Real Estate Consultancy</a>
+                <a>Property Management</a>
+                <a>Investment Advisory</a>
             </nav>
             <nav>
                 <h6 className="footer-title">Social Media Links</h6>
-                <a className='flex gap-2 items-center'><BiLogoFacebookCircle/> Facebook</a>
-                <a className='flex gap-2 items-center'><BsInstagram/> Instagram</a>
-                <a className='flex gap-2 items-center'><RxLinkedinLogo/> Linkedin</a>
+                <a className='flex gap-2 items-center'><BiLogoFacebookCircle /> Facebook</a>
+                <a className='flex gap-2 items-center'><BsInstagram /> Instagram</a>
+                <a className='flex gap-2 items-center'><RxLinkedinLogo /> Linkedin</a>
             </nav>
             <nav>
                 <h6 className="footer-title">Legal</h6>
