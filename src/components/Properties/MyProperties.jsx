@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import Property from './Property'
 
 const MyProperties = () => {
 
     const [myProperties, setMyProperties] = useState([]);
     const { user } = useAuth();
     const { axiosSecure } = useAxiosSecure();
+    console.log(user);
 
     useEffect(() => {
         if (user?.email) {
-            axiosSecure?.get(`/properties?email=${user.email}`)
+            fetch(`http://localhost:3000/properties?email=${user.email}`)
+                .then(res => res.json())
                 .then(data => {
-                    console.log(data.data);
-                    setMyProperties(data.data);
+                    console.log(data);
+                    setMyProperties(data)
                 })
         }
     }, [user, axiosSecure])
@@ -25,7 +28,7 @@ const MyProperties = () => {
             </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-6 mt-5 py-8 mx-auto px-5 rounded-lg'>
                 {
-                    myProperties.map(item => (<Property key={item._id} property={item} />
+                    myProperties.map(item => (<Property key={item._id} property={item} flag={true} />
                     ))}
             </div>
         </div>

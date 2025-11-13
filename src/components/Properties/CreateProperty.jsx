@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import useAuth from '../../hooks/useAuth';
 import useAxios from '../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const categoryPromise = fetch('/categories.json').then(res => res.json());
 
@@ -39,12 +40,19 @@ const CreateProperty = () => {
         fetch('http://localhost:3000/properties', {
             method: 'POST',
             headers: {
-                'Content-type' : 'application/json'
+                'Content-type': 'application/json'
             },
             body: JSON.stringify(newProperty)
         })
             .then(res => res.json())
             .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Created!",
+                        text: "Your Property has been created.",
+                        icon: "success"
+                    });
+                }
                 console.log(data);
             })
 
