@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 const categoryPromise = fetch('/categories.json').then(res => res.json());
 
 
-const Property = ({ property, flag = false }) => {
+const Property = ({ property,deleteHandler, flag = false }) => {
     const { title, image, category, description, location, price_min, price, _id } = property;
     const { user } = useAuth();
     const categories = use(categoryPromise);
@@ -63,35 +63,6 @@ const Property = ({ property, flag = false }) => {
             })
     }
 
-    const deleteHandler = (e) => {
-
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                fetch(`http://localhost:3000/properties/${_id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your bid has been deleted.",
-                                icon: "success"
-                            });
-                        }
-                    })
-            }
-        });
-    }
     return (
         <>
             <div className="card bg-base-100 h-full w-96 shadow-sm">
@@ -120,7 +91,7 @@ const Property = ({ property, flag = false }) => {
                             <hr className='opacity-40' />
                             <div className='flex justify-between mt-3'>
                                 <button onClick={editHandler} className='btn btn-warning btn-outline'><CiEdit /> Edit</button>
-                                <button onClick={deleteHandler} className='btn btn-error btn-outline'><MdDelete /> Delete</button>
+                                <button onClick={()=>deleteHandler(_id)} className='btn btn-error btn-outline'><MdDelete /> Delete</button>
                             </div>
                         </>
 

@@ -5,7 +5,7 @@ import person3 from '../../assets/person2.jpg'
 
 const CustomerSaying = () => {
     return (
-        <div className='bg-green-50 p-8 my-10'>
+        <div className='bg-blue-100 p-8 my-10 text-primary'>
             <h1 className='text-2xl sm:text-4xl text-center font-semibold text-primary mb-10'>What Customers Are Saying</h1>
 
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 p-8'>

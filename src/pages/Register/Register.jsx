@@ -31,12 +31,12 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        // console.log(name, photo, email, password);
+        console.log(name, photo, email, password);
 
-        // if (!passwordRegex.test(password) || password.length < 6) {
-        //     setError('Password must be minimum 6 character with uppercase & lowercase');
-        //     return;
-        // }
+        if (!passwordRegex.test(password) || password.length < 6) {
+            setError('Password must be minimum 6 character with uppercase & lowercase');
+            return;
+        }
 
         setError('');
         setSuccess(false);
@@ -115,7 +115,7 @@ const Register = () => {
                                     error && notify2(error)
                                 }
                                 {
-                                    success && notify()
+                                    success && <p className='text-primary'>User registered successfully.</p>
                                 }
                                 <p className='mt-3'>Already have an account? please <NavLink to={'/auth/login'} className={'text-primary underline'}>Login</NavLink> </p>
                             </fieldset>
