@@ -10,6 +10,7 @@ import AllProperties from "../components/Properties/AllProperties";
 import PrivateRouter from "../context/PrivateRouter";
 import PropertyDetails from "../components/Properties/PropertyDetails";
 import MyProperties from "../components/Properties/MyProperties";
+import MyRatings from "../Ratings/MyRatings";
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: 'my-properties',
                 element: <PrivateRouter><MyProperties></MyProperties> </PrivateRouter>
+            },
+            {
+                path: 'my-ratings',
+                element: <PrivateRouter><MyRatings></MyRatings> </PrivateRouter>
             }
         ]
     },

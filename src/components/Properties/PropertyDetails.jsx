@@ -1,19 +1,70 @@
-import React, { use, useEffect } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { NavLink, useLoaderData, useParams } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import demo from '../../assets/bgg2.jpg'
 import { CiLocationOn } from "react-icons/ci";
+import Rating from 'react-rating';
+import { Star } from 'lucide-react';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const PropertyDetails = () => {
     const property = useLoaderData();
     const { title, image, category, description, location, price_min, created_at, seller_name, email } = property;
+    const { user } = useAuth();
+    const [rating, setRating] = useState(0);
     const notify = () => toast("Your information recorded!");
     const notify2 = () => toast("Item added to wishlist!");
+
+    
+        console.log('User photo ', user);
+
     const submitHandler = (e) => {
         e.preventDefault();
-        notify();
-        e.target.reset();
+        const review = e.target.name.value;
+        const now = new Date();
+
+        const created_at = now.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        const reviewData = {
+            rating,
+            review,
+            created_at,
+            reviewer_name: user?.displayName,
+            reviewer_image: user?.photoURL,
+            email: user?.email,
+            property_name: title,
+            property_image: property?.image
+        };
+
+        console.log(reviewData);
+
+        fetch('http://localhost:3000/ratings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviewData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Reviewd!",
+                        text: "Your review has been added.",
+                        icon: "success"
+                    });
+                }
+                e.target.reset();
+            })
+
+
     }
 
     const wishlistHandler = () => {
@@ -67,21 +118,24 @@ const PropertyDetails = () => {
                 <p className=''><span className='font-bold text-primary'>Description</span>: <span className='text-accent'>{description}</span>
                 </p>
                 <div>
-                        <div className='flex justify-center'>
-                            <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl mt-3">
-                                <div className="card-body">
-                                    <form onSubmit={submitHandler}>
-                                        <fieldset className="fieldset">
-                                            <input required name='name' type="name" className="input w-full" placeholder="Name" />
-                                            <input required name='email' type="email" className="input w-full" placeholder="Email" />
-                                            <ToastContainer />
-                                            <button type='submit' className="btn btn-neutral mt-4">Try Now</button>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                    <h1 className='mt-10 mb-4 text-xl font-bold text-primary'>Rating & Review's</h1>
+                    <div className='w-full'>
+                        <form onSubmit={submitHandler}>
+                            <fieldset className="fieldset">
+                                <Rating
+                                    style={{ maxWidth: 180 }}
+                                    initialRating={rating}
+                                    onChange={(rate) => setRating(rate)}
+                                    emptySymbol={<Star size={25} className="text-gray-300" />}
+                                    fullSymbol={<Star size={25} className="fill-yellow-400 text-yellow-400" />}
+                                />
+                                <input required name='name' type="name" className="input w-full" placeholder="Write your review here" />
+                                <button type='submit' className="btn btn-primary mt-2 w-30">Review</button>
+                                <ToastContainer />
+                            </fieldset>
+                        </form>
                     </div>
+                </div>
             </div>
         </div>
     );
