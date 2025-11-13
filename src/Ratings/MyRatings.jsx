@@ -14,7 +14,7 @@ const MyRatings = () => {
         if (user?.displayName) {
             axiosSecure.get(`/ratings?name=${user.displayName}`)
                 .then(data => {
-                    console.log(data.data);
+                    // console.log(data.data);
                     setRatings(data.data);
                 })
 

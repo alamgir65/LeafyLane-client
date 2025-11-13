@@ -25,10 +25,10 @@ const useAxiosSecure = () => {
         const responseInterceptor = instance.interceptors.response.use((res)=>{
             return res;
         }, (err)=>{
-            console.log(err);
+            // console.log(err);
             const status = err.status;
             if(status === 403 || status === 401){
-                console.log('apni mara khaichen mama');
+                // console.log('apni mara khaichen mama');
                 signOutUser()
                     .then(()=>{
                         navigate('/auth/register');

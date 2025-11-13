@@ -18,7 +18,7 @@ const PropertyDetails = () => {
     const notify2 = () => toast("Item added to wishlist!");
 
     
-        console.log('User photo ', user);
+        // console.log('User photo ', user);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -42,7 +42,7 @@ const PropertyDetails = () => {
             property_image: property?.image
         };
 
-        console.log(reviewData);
+        // console.log(reviewData);
 
         fetch('http://localhost:3000/ratings', {
             method: 'POST',
@@ -53,7 +53,7 @@ const PropertyDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Reviewd!",

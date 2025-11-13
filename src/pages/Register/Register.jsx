@@ -31,7 +31,7 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        console.log(name, photo, email, password);
+        // console.log(name, photo, email, password);
 
         if (!passwordRegex.test(password) || password.length < 6) {
             setError('Password must be minimum 6 character with uppercase & lowercase');
@@ -112,7 +112,7 @@ const Register = () => {
                                 </button>
                                 <ToastContainer />
                                 {
-                                    error && notify2(error)
+                                    error && <p className='text-red-500'>{error}</p>
                                 }
                                 {
                                     success && <p className='text-primary'>User registered successfully.</p>

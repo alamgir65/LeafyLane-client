@@ -35,7 +35,7 @@ const CreateProperty = () => {
         const newProperty = {
             title, seller_name, email, price, category, description, location, image, created_at
         };
-        console.log(newProperty);
+        // console.log(newProperty);
 
         fetch('http://localhost:3000/properties', {
             method: 'POST',
@@ -53,7 +53,7 @@ const CreateProperty = () => {
                         icon: "success"
                     });
                 }
-                console.log(data);
+                // console.log(data);
             })
 
     }

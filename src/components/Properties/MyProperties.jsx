@@ -9,7 +9,7 @@ const MyProperties = () => {
     const [myProperties, setMyProperties] = useState([]);
     const { user } = useAuth();
     const { axiosSecure } = useAxiosSecure();
-    console.log(user);
+    // console.log(user);
 
     useEffect(() => {
         if (user?.email) {

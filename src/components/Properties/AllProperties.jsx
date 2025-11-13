@@ -74,7 +74,8 @@ const AllProperties = () => {
                         </svg>
                         <input type="search" onChange={(e) => {
                             setSearchValue(e.target.value)
-                            console.log(searchValue);
+                            // console.log(searchValue);
+                        
                         }} required placeholder="Search by Title" />
                     </label>
                 </div>
