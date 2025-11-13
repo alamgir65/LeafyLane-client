@@ -18,7 +18,7 @@ const MyRatings = () => {
                     setRatings(data.data);
                 })
 
-            // fetch(`http://localhost:3000/bids?email=${user.email}`)
+            // fetch(`https://home-next-api-server.vercel.app/bids?email=${user.email}`)
             //     .then(res => res.json())
             //     .then(data => {
             //         console.log(data);

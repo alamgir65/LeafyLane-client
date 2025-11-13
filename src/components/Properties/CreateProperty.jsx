@@ -37,7 +37,7 @@ const CreateProperty = () => {
         };
         // console.log(newProperty);
 
-        fetch('http://localhost:3000/properties', {
+        fetch('https://home-next-api-server.vercel.app/properties', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

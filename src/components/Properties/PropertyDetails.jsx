@@ -44,7 +44,7 @@ const PropertyDetails = () => {
 
         // console.log(reviewData);
 
-        fetch('http://localhost:3000/ratings', {
+        fetch('https://home-next-api-server.vercel.app/ratings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -73,14 +73,14 @@ const PropertyDetails = () => {
     }
 
     useEffect(() => {
-        document.title = "ToyTime's - Details";
+        document.title = "HomeNest - Details";
     }, [])
 
     return (
         <div className='mb-10  w-11/12 mx-auto p-5'>
             <main className='flex flex-col sm:flex-row items-center gap-5 py-10'>
                 <div className='flex-1'>
-                    <img src={demo} alt="" />
+                    <img src={image? image : demo} alt="" />
                 </div>
                 <div className='space-y-2 text-primary flex-1'>
                     {/* <div>

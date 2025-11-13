@@ -39,7 +39,7 @@ const Property = ({ property,deleteHandler, flag = false }) => {
 
         // console.log(updatedProduct);
 
-        fetch(`http://localhost:3000/properties/${_id}`, {
+        fetch(`https://home-next-api-server.vercel.app/properties/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +68,7 @@ const Property = ({ property,deleteHandler, flag = false }) => {
             <div className="card bg-base-100 h-full w-96 shadow-sm">
                 <figure>
                     <img
-                        src={demo}
+                        src={image? image : demo}
                         className='h-60 w-full'
                         alt="Shoes" />
                 </figure>

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'property-details/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/properties/${params.id}`),
+                loader: ({params}) => fetch(`https://home-next-api-server.vercel.app/properties/${params.id}`),
                 element: <PrivateRouter><PropertyDetails></PropertyDetails> </PrivateRouter>
             },
             {

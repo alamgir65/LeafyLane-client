@@ -47,7 +47,7 @@ const Rating = ({ item }) => {
                 <div className="flex justify-between items-center mt-8">
                     <div className="flex gap-3 items-center">
                         <img
-                            src={reviewer_image || demo}
+                            src={reviewer_image? reviewer_image : demo}
                             className="w-12 h-12 rounded-full object-cover"
                             alt={reviewer_name}
                         />
